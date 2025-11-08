@@ -1,0 +1,14 @@
+{"event_time": "2025-11-08T13:37:31.492149Z", "bridge_id": 1, "sensor_type": "tilt", "value": 16.087, "ingest_time": "2025-11-08T13:38:00.492183Z"}
+{"event_time": "2025-11-08T13:37:02.492783Z", "bridge_id": 3, "sensor_type": "tilt", "value": 20.506, "ingest_time": "2025-11-08T13:38:01.492786Z"}
+{"event_time": "2025-11-08T13:37:21.492789Z", "bridge_id": 1, "sensor_type": "tilt", "value": 5.134, "ingest_time": "2025-11-08T13:38:01.492791Z"}
+{"event_time": "2025-11-08T13:37:42.493183Z", "bridge_id": 5, "sensor_type": "tilt", "value": 6.379, "ingest_time": "2025-11-08T13:38:02.493186Z"}
+{"event_time": "2025-11-08T13:37:47.493809Z", "bridge_id": 5, "sensor_type": "tilt", "value": 22.41, "ingest_time": "2025-11-08T13:38:03.493813Z"}
+{"event_time": "2025-11-08T13:37:38.493816Z", "bridge_id": 4, "sensor_type": "tilt", "value": 10.86, "ingest_time": "2025-11-08T13:38:03.493823Z"}
+{"event_time": "2025-11-08T13:37:32.493826Z", "bridge_id": 2, "sensor_type": "tilt", "value": 2.727, "ingest_time": "2025-11-08T13:38:03.493829Z"}
+{"event_time": "2025-11-08T13:38:00.494332Z", "bridge_id": 4, "sensor_type": "tilt", "value": 11.543, "ingest_time": "2025-11-08T13:38:04.494377Z"}
+{"event_time": "2025-11-08T13:37:09.494611Z", "bridge_id": 1, "sensor_type": "tilt", "value": 21.59, "ingest_time": "2025-11-08T13:38:05.494660Z"}
+{"event_time": "2025-11-08T13:37:33.494680Z", "bridge_id": 3, "sensor_type": "tilt", "value": 18.269, "ingest_time": "2025-11-08T13:38:05.494684Z"}
+{"event_time": "2025-11-08T13:37:17.494978Z", "bridge_id": 1, "sensor_type": "tilt", "value": 3.773, "ingest_time": "2025-11-08T13:38:06.494982Z"}
+{"event_time": "2025-11-08T13:37:56.494984Z", "bridge_id": 4, "sensor_type": "tilt", "value": 7.952, "ingest_time": "2025-11-08T13:38:06.494987Z"}
+{"event_time": "2025-11-08T13:37:48.495161Z", "bridge_id": 2, "sensor_type": "tilt", "value": 11.97, "ingest_time": "2025-11-08T13:38:07.495165Z"}
+{"event_time": "2025-11-08T13:37:32.495186Z", "bridge_id": 1, "sensor_type": "tilt", "value": 6.903, "ingest_time": "2025-11-08T13:38:07.495189Z"}

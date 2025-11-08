@@ -1,0 +1,17 @@
+{"event_time": "2025-11-08T13:41:45.042275Z", "bridge_id": 1, "sensor_type": "temperature", "value": 22.899, "ingest_time": "2025-11-08T13:41:56.042280Z"}
+{"event_time": "2025-11-08T13:41:17.043980Z", "bridge_id": 2, "sensor_type": "temperature", "value": 35.527, "ingest_time": "2025-11-08T13:41:57.043985Z"}
+{"event_time": "2025-11-08T13:41:53.045284Z", "bridge_id": 4, "sensor_type": "temperature", "value": 16.785, "ingest_time": "2025-11-08T13:41:58.045296Z"}
+{"event_time": "2025-11-08T13:41:51.045311Z", "bridge_id": 2, "sensor_type": "temperature", "value": 11.005, "ingest_time": "2025-11-08T13:41:58.045316Z"}
+{"event_time": "2025-11-08T13:41:57.045320Z", "bridge_id": 2, "sensor_type": "temperature", "value": 38.917, "ingest_time": "2025-11-08T13:41:58.045325Z"}
+{"event_time": "2025-11-08T13:41:01.046637Z", "bridge_id": 2, "sensor_type": "temperature", "value": 21.514, "ingest_time": "2025-11-08T13:41:59.046679Z"}
+{"event_time": "2025-11-08T13:41:42.046718Z", "bridge_id": 4, "sensor_type": "temperature", "value": 17.035, "ingest_time": "2025-11-08T13:41:59.046723Z"}
+{"event_time": "2025-11-08T13:41:19.046977Z", "bridge_id": 5, "sensor_type": "temperature", "value": 27.627, "ingest_time": "2025-11-08T13:42:00.046982Z"}
+{"event_time": "2025-11-08T13:41:20.046986Z", "bridge_id": 4, "sensor_type": "temperature", "value": 22.875, "ingest_time": "2025-11-08T13:42:00.046990Z"}
+{"event_time": "2025-11-08T13:41:34.048359Z", "bridge_id": 1, "sensor_type": "temperature", "value": 36.357, "ingest_time": "2025-11-08T13:42:01.048365Z"}
+{"event_time": "2025-11-08T13:41:57.056190Z", "bridge_id": 5, "sensor_type": "temperature", "value": 32.553, "ingest_time": "2025-11-08T13:42:03.056225Z"}
+{"event_time": "2025-11-08T13:41:46.056233Z", "bridge_id": 3, "sensor_type": "temperature", "value": 39.757, "ingest_time": "2025-11-08T13:42:03.056240Z"}
+{"event_time": "2025-11-08T13:41:37.056244Z", "bridge_id": 3, "sensor_type": "temperature", "value": 30.192, "ingest_time": "2025-11-08T13:42:03.056249Z"}
+{"event_time": "2025-11-08T13:41:45.060654Z", "bridge_id": 5, "sensor_type": "temperature", "value": 20.661, "ingest_time": "2025-11-08T13:42:04.060934Z"}
+{"event_time": "2025-11-08T13:41:36.064467Z", "bridge_id": 2, "sensor_type": "temperature", "value": 26.507, "ingest_time": "2025-11-08T13:42:05.064499Z"}
+{"event_time": "2025-11-08T13:41:45.064510Z", "bridge_id": 2, "sensor_type": "temperature", "value": 17.756, "ingest_time": "2025-11-08T13:42:05.064515Z"}
+{"event_time": "2025-11-08T13:41:40.064540Z", "bridge_id": 4, "sensor_type": "temperature", "value": 12.809, "ingest_time": "2025-11-08T13:42:05.064544Z"}

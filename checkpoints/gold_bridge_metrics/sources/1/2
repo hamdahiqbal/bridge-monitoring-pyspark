@@ -1,0 +1,6 @@
+v1
+{"path":"file:///C:/Users/HS%20Computers/bridge-monitoring-pyspark/silver/bridge_vibration/part-00000-602050e8-eacb-464e-8d94-98395216d0a0-c000.snappy.parquet","timestamp":1762600674293,"batchId":2}
+{"path":"file:///C:/Users/HS%20Computers/bridge-monitoring-pyspark/silver/bridge_vibration/part-00000-032762ba-1deb-4881-8185-9d26d93ead91-c000.snappy.parquet","timestamp":1762600684772,"batchId":2}
+{"path":"file:///C:/Users/HS%20Computers/bridge-monitoring-pyspark/silver/bridge_vibration/part-00000-2ce429cc-0f8a-408a-92fd-211eb2d8e994-c000.snappy.parquet","timestamp":1762600694646,"batchId":2}
+{"path":"file:///C:/Users/HS%20Computers/bridge-monitoring-pyspark/silver/bridge_vibration/part-00000-0366e9a3-2f8f-40e8-bd95-9c7ff5a5ac46-c000.snappy.parquet","timestamp":1762600703528,"batchId":2}
+{"path":"file:///C:/Users/HS%20Computers/bridge-monitoring-pyspark/silver/bridge_vibration/part-00000-f9687c5c-f1f4-483e-ab79-303af1ad123d-c000.snappy.parquet","timestamp":1762600713700,"batchId":2}

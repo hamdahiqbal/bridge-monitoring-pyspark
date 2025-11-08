@@ -1,0 +1,15 @@
+v1
+{"path":"file:///C:/Users/HS%20Computers/bridge-monitoring-pyspark/bronze/bridge_temperature/part-00000-aaab7d9f-d7ec-4282-936b-d580dcc3ee08-c000.snappy.parquet","timestamp":1762598772543,"batchId":0}
+{"path":"file:///C:/Users/HS%20Computers/bridge-monitoring-pyspark/bronze/bridge_temperature/part-00001-299c103b-d2f5-4ddf-8f1f-d16cac64b7d3-c000.snappy.parquet","timestamp":1762598772543,"batchId":0}
+{"path":"file:///C:/Users/HS%20Computers/bridge-monitoring-pyspark/bronze/bridge_temperature/part-00002-3e44224d-0ddc-4754-b695-2a741d1b9748-c000.snappy.parquet","timestamp":1762598772543,"batchId":0}
+{"path":"file:///C:/Users/HS%20Computers/bridge-monitoring-pyspark/bronze/bridge_temperature/part-00003-8ce2d871-2925-4b0a-a6e1-488ac645ea89-c000.snappy.parquet","timestamp":1762598772543,"batchId":0}
+{"path":"file:///C:/Users/HS%20Computers/bridge-monitoring-pyspark/bronze/bridge_temperature/part-00004-82da8103-cb29-488d-8ae2-44f9e2ae177c-c000.snappy.parquet","timestamp":1762598772543,"batchId":0}
+{"path":"file:///C:/Users/HS%20Computers/bridge-monitoring-pyspark/bronze/bridge_temperature/part-00005-5e72baba-b829-4bd7-8202-58f139828967-c000.snappy.parquet","timestamp":1762598772543,"batchId":0}
+{"path":"file:///C:/Users/HS%20Computers/bridge-monitoring-pyspark/bronze/bridge_temperature/part-00006-0ddad5fe-4312-4818-a4c9-e1605e97e7c5-c000.snappy.parquet","timestamp":1762598772543,"batchId":0}
+{"path":"file:///C:/Users/HS%20Computers/bridge-monitoring-pyspark/bronze/bridge_temperature/part-00007-e501e8dd-71e7-4fb0-9f43-4b46e1cfa565-c000.snappy.parquet","timestamp":1762598772543,"batchId":0}
+{"path":"file:///C:/Users/HS%20Computers/bridge-monitoring-pyspark/bronze/bridge_temperature/part-00008-42bdc3b7-78a7-4676-bd1e-795a3c434986-c000.snappy.parquet","timestamp":1762598772543,"batchId":0}
+{"path":"file:///C:/Users/HS%20Computers/bridge-monitoring-pyspark/bronze/bridge_temperature/part-00009-7a308e76-e34f-4e63-9dda-37f0f1adde2d-c000.snappy.parquet","timestamp":1762598772543,"batchId":0}
+{"path":"file:///C:/Users/HS%20Computers/bridge-monitoring-pyspark/bronze/bridge_temperature/part-00010-a6c88508-19c3-481a-b896-a764307725ad-c000.snappy.parquet","timestamp":1762598772543,"batchId":0}
+{"path":"file:///C:/Users/HS%20Computers/bridge-monitoring-pyspark/bronze/bridge_temperature/part-00000-a9470895-48a4-4d43-bc77-15c7efa0e80e-c000.snappy.parquet","timestamp":1762598817337,"batchId":0}
+{"path":"file:///C:/Users/HS%20Computers/bridge-monitoring-pyspark/bronze/bridge_temperature/part-00000-806011de-27dc-4ac9-a3e4-1b36279954b2-c000.snappy.parquet","timestamp":1762598826868,"batchId":0}
+{"path":"file:///C:/Users/HS%20Computers/bridge-monitoring-pyspark/bronze/bridge_temperature/part-00000-220daac4-244a-4332-8955-7c6bea404129-c000.snappy.parquet","timestamp":1762598836851,"batchId":0}

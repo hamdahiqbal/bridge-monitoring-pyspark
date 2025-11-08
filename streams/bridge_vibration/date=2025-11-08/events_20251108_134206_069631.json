@@ -1,0 +1,16 @@
+{"event_time": "2025-11-08T13:41:43.042210Z", "bridge_id": 2, "sensor_type": "vibration", "value": 8.695, "ingest_time": "2025-11-08T13:41:56.042251Z"}
+{"event_time": "2025-11-08T13:41:46.042262Z", "bridge_id": 3, "sensor_type": "vibration", "value": 5.139, "ingest_time": "2025-11-08T13:41:56.042270Z"}
+{"event_time": "2025-11-08T13:41:03.042292Z", "bridge_id": 2, "sensor_type": "vibration", "value": 5.982, "ingest_time": "2025-11-08T13:41:56.042297Z"}
+{"event_time": "2025-11-08T13:41:33.043960Z", "bridge_id": 2, "sensor_type": "vibration", "value": 2.326, "ingest_time": "2025-11-08T13:41:57.043966Z"}
+{"event_time": "2025-11-08T13:41:55.043971Z", "bridge_id": 5, "sensor_type": "vibration", "value": 0.396, "ingest_time": "2025-11-08T13:41:57.043976Z"}
+{"event_time": "2025-11-08T13:41:31.046687Z", "bridge_id": 1, "sensor_type": "vibration", "value": 1.625, "ingest_time": "2025-11-08T13:41:59.046694Z"}
+{"event_time": "2025-11-08T13:41:01.046700Z", "bridge_id": 1, "sensor_type": "vibration", "value": 5.671, "ingest_time": "2025-11-08T13:41:59.046704Z"}
+{"event_time": "2025-11-08T13:41:53.046709Z", "bridge_id": 5, "sensor_type": "vibration", "value": 8.068, "ingest_time": "2025-11-08T13:41:59.046713Z"}
+{"event_time": "2025-11-08T13:41:43.046920Z", "bridge_id": 5, "sensor_type": "vibration", "value": 5.178, "ingest_time": "2025-11-08T13:42:00.046959Z"}
+{"event_time": "2025-11-08T13:41:48.048313Z", "bridge_id": 4, "sensor_type": "vibration", "value": 3.431, "ingest_time": "2025-11-08T13:42:01.048347Z"}
+{"event_time": "2025-11-08T13:41:21.048390Z", "bridge_id": 4, "sensor_type": "vibration", "value": 7.351, "ingest_time": "2025-11-08T13:42:01.048395Z"}
+{"event_time": "2025-11-08T13:41:49.052009Z", "bridge_id": 4, "sensor_type": "vibration", "value": 9.191, "ingest_time": "2025-11-08T13:42:02.052013Z"}
+{"event_time": "2025-11-08T13:41:59.056253Z", "bridge_id": 1, "sensor_type": "vibration", "value": 9.975, "ingest_time": "2025-11-08T13:42:03.056258Z"}
+{"event_time": "2025-11-08T13:41:56.060616Z", "bridge_id": 2, "sensor_type": "vibration", "value": 3.98, "ingest_time": "2025-11-08T13:42:04.060630Z"}
+{"event_time": "2025-11-08T13:41:23.060646Z", "bridge_id": 5, "sensor_type": "vibration", "value": 8.308, "ingest_time": "2025-11-08T13:42:04.060650Z"}
+{"event_time": "2025-11-08T13:41:30.064530Z", "bridge_id": 4, "sensor_type": "vibration", "value": 2.904, "ingest_time": "2025-11-08T13:42:05.064536Z"}

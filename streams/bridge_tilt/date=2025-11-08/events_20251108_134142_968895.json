@@ -1,0 +1,15 @@
+{"event_time": "2025-11-08T13:41:23.962991Z", "bridge_id": 1, "sensor_type": "tilt", "value": 19.802, "ingest_time": "2025-11-08T13:41:32.963021Z"}
+{"event_time": "2025-11-08T13:40:47.963515Z", "bridge_id": 4, "sensor_type": "tilt", "value": 23.262, "ingest_time": "2025-11-08T13:41:33.963518Z"}
+{"event_time": "2025-11-08T13:41:16.963810Z", "bridge_id": 4, "sensor_type": "tilt", "value": 21.668, "ingest_time": "2025-11-08T13:41:34.963813Z"}
+{"event_time": "2025-11-08T13:41:32.963816Z", "bridge_id": 4, "sensor_type": "tilt", "value": 16.967, "ingest_time": "2025-11-08T13:41:34.963818Z"}
+{"event_time": "2025-11-08T13:41:28.964309Z", "bridge_id": 1, "sensor_type": "tilt", "value": 6.54, "ingest_time": "2025-11-08T13:41:35.964312Z"}
+{"event_time": "2025-11-08T13:41:23.965193Z", "bridge_id": 3, "sensor_type": "tilt", "value": 13.217, "ingest_time": "2025-11-08T13:41:36.965197Z"}
+{"event_time": "2025-11-08T13:40:48.965602Z", "bridge_id": 1, "sensor_type": "tilt", "value": 17.601, "ingest_time": "2025-11-08T13:41:37.965634Z"}
+{"event_time": "2025-11-08T13:41:36.965645Z", "bridge_id": 5, "sensor_type": "tilt", "value": 22.332, "ingest_time": "2025-11-08T13:41:37.965650Z"}
+{"event_time": "2025-11-08T13:41:15.965653Z", "bridge_id": 4, "sensor_type": "tilt", "value": 29.664, "ingest_time": "2025-11-08T13:41:37.965656Z"}
+{"event_time": "2025-11-08T13:40:58.965936Z", "bridge_id": 1, "sensor_type": "tilt", "value": 27.068, "ingest_time": "2025-11-08T13:41:38.965941Z"}
+{"event_time": "2025-11-08T13:41:04.966279Z", "bridge_id": 5, "sensor_type": "tilt", "value": 8.965, "ingest_time": "2025-11-08T13:41:39.966284Z"}
+{"event_time": "2025-11-08T13:41:10.966377Z", "bridge_id": 3, "sensor_type": "tilt", "value": 27.623, "ingest_time": "2025-11-08T13:41:40.966410Z"}
+{"event_time": "2025-11-08T13:40:55.966433Z", "bridge_id": 3, "sensor_type": "tilt", "value": 16.924, "ingest_time": "2025-11-08T13:41:40.966435Z"}
+{"event_time": "2025-11-08T13:41:26.966706Z", "bridge_id": 5, "sensor_type": "tilt", "value": 1.672, "ingest_time": "2025-11-08T13:41:41.966738Z"}
+{"event_time": "2025-11-08T13:41:37.966769Z", "bridge_id": 3, "sensor_type": "tilt", "value": 20.24, "ingest_time": "2025-11-08T13:41:41.966771Z"}

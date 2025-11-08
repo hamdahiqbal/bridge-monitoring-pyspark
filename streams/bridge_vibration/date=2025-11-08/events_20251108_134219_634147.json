@@ -1,0 +1,13 @@
+{"event_time": "2025-11-08T13:41:56.618048Z", "bridge_id": 5, "sensor_type": "vibration", "value": 4.492, "ingest_time": "2025-11-08T13:42:10.618091Z"}
+{"event_time": "2025-11-08T13:41:53.618110Z", "bridge_id": 4, "sensor_type": "vibration", "value": 1.555, "ingest_time": "2025-11-08T13:42:10.618116Z"}
+{"event_time": "2025-11-08T13:41:32.618130Z", "bridge_id": 3, "sensor_type": "vibration", "value": 2.645, "ingest_time": "2025-11-08T13:42:10.618135Z"}
+{"event_time": "2025-11-08T13:41:35.619441Z", "bridge_id": 5, "sensor_type": "vibration", "value": 1.923, "ingest_time": "2025-11-08T13:42:11.619455Z"}
+{"event_time": "2025-11-08T13:41:55.620231Z", "bridge_id": 1, "sensor_type": "vibration", "value": 4.534, "ingest_time": "2025-11-08T13:42:12.620268Z"}
+{"event_time": "2025-11-08T13:41:56.621667Z", "bridge_id": 3, "sensor_type": "vibration", "value": 0.662, "ingest_time": "2025-11-08T13:42:13.621672Z"}
+{"event_time": "2025-11-08T13:41:17.621685Z", "bridge_id": 4, "sensor_type": "vibration", "value": 9.145, "ingest_time": "2025-11-08T13:42:13.621689Z"}
+{"event_time": "2025-11-08T13:41:42.626937Z", "bridge_id": 5, "sensor_type": "vibration", "value": 2.514, "ingest_time": "2025-11-08T13:42:15.626962Z"}
+{"event_time": "2025-11-08T13:41:26.626981Z", "bridge_id": 5, "sensor_type": "vibration", "value": 6.41, "ingest_time": "2025-11-08T13:42:15.626985Z"}
+{"event_time": "2025-11-08T13:41:48.626989Z", "bridge_id": 1, "sensor_type": "vibration", "value": 1.582, "ingest_time": "2025-11-08T13:42:15.626993Z"}
+{"event_time": "2025-11-08T13:41:28.628459Z", "bridge_id": 2, "sensor_type": "vibration", "value": 1.615, "ingest_time": "2025-11-08T13:42:16.628464Z"}
+{"event_time": "2025-11-08T13:42:05.629906Z", "bridge_id": 5, "sensor_type": "vibration", "value": 9.289, "ingest_time": "2025-11-08T13:42:18.629969Z"}
+{"event_time": "2025-11-08T13:41:21.630011Z", "bridge_id": 3, "sensor_type": "vibration", "value": 5.176, "ingest_time": "2025-11-08T13:42:18.630016Z"}

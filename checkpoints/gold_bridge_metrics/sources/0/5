@@ -1,0 +1,3 @@
+v1
+{"path":"file:///C:/Users/HS%20Computers/bridge-monitoring-pyspark/silver/bridge_temperature/part-00000-42f095e8-7611-4716-9821-5a64acd16d7f-c000.snappy.parquet","timestamp":1762609329001,"batchId":5}
+{"path":"file:///C:/Users/HS%20Computers/bridge-monitoring-pyspark/silver/bridge_temperature/part-00000-c71a55d9-b264-4dd9-adb2-58d8541bed99-c000.snappy.parquet","timestamp":1762609342736,"batchId":5}
