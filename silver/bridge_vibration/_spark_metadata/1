@@ -1,5 +1,0 @@
-v1
-{"path":"file:///C:/Users/HS%20Computers/bridge-monitoring-pyspark/silver/bridge_vibration/part-00000-a7d82300-0588-418f-a413-92224b446777-c000.snappy.parquet","size":5234,"isDir":false,"modificationTime":1762599567794,"blockReplication":1,"blockSize":33554432,"action":"add"}
-{"path":"file:///C:/Users/HS%20Computers/bridge-monitoring-pyspark/silver/bridge_vibration/part-00001-91f0c9ea-8a4e-45f3-8a02-1af60384133f-c000.snappy.parquet","size":5233,"isDir":false,"modificationTime":1762599567794,"blockReplication":1,"blockSize":33554432,"action":"add"}
-{"path":"file:///C:/Users/HS%20Computers/bridge-monitoring-pyspark/silver/bridge_vibration/part-00002-90bb3084-d72a-4df1-8305-38498923a5ee-c000.snappy.parquet","size":5156,"isDir":false,"modificationTime":1762599567798,"blockReplication":1,"blockSize":33554432,"action":"add"}
-{"path":"file:///C:/Users/HS%20Computers/bridge-monitoring-pyspark/silver/bridge_vibration/part-00003-bfeac5e1-d612-4bf2-98d9-6617f39411ff-c000.snappy.parquet","size":5121,"isDir":false,"modificationTime":1762599567798,"blockReplication":1,"blockSize":33554432,"action":"add"}

@@ -1,6 +1,0 @@
-v1
-{"path":"file:///C:/Users/HS%20Computers/bridge-monitoring-pyspark/silver/bridge_temperature/part-00000-69b8a3ed-2bb3-4f72-89fd-5a19859d429f-c000.snappy.parquet","timestamp":1762609786571,"batchId":7}
-{"path":"file:///C:/Users/HS%20Computers/bridge-monitoring-pyspark/silver/bridge_temperature/part-00000-7d2c5c49-b4fb-48f8-b924-a2616c47efad-c000.snappy.parquet","timestamp":1762609796572,"batchId":7}
-{"path":"file:///C:/Users/HS%20Computers/bridge-monitoring-pyspark/silver/bridge_temperature/part-00000-b27052d0-a9d7-47ad-a465-7e9ea9795432-c000.snappy.parquet","timestamp":1762609806797,"batchId":7}
-{"path":"file:///C:/Users/HS%20Computers/bridge-monitoring-pyspark/silver/bridge_temperature/part-00000-7f17f2fc-b73c-4416-832c-3375728e3c5d-c000.snappy.parquet","timestamp":1762609816334,"batchId":7}
-{"path":"file:///C:/Users/HS%20Computers/bridge-monitoring-pyspark/silver/bridge_temperature/part-00000-33a3580a-9b19-49bf-ac15-04099887ce61-c000.snappy.parquet","timestamp":1762609826499,"batchId":7}

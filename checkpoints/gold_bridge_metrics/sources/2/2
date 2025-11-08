@@ -1,6 +1,0 @@
-v1
-{"path":"file:///C:/Users/HS%20Computers/bridge-monitoring-pyspark/silver/bridge_tilt/part-00000-9f7b569f-e4a3-4427-9174-4c103c430f03-c000.snappy.parquet","timestamp":1762600674334,"batchId":2}
-{"path":"file:///C:/Users/HS%20Computers/bridge-monitoring-pyspark/silver/bridge_tilt/part-00000-365403a9-4296-4140-bb5b-68f5f9165ed8-c000.snappy.parquet","timestamp":1762600684878,"batchId":2}
-{"path":"file:///C:/Users/HS%20Computers/bridge-monitoring-pyspark/silver/bridge_tilt/part-00000-2f98c6e0-5037-4bcc-8a08-92c7af578d10-c000.snappy.parquet","timestamp":1762600694673,"batchId":2}
-{"path":"file:///C:/Users/HS%20Computers/bridge-monitoring-pyspark/silver/bridge_tilt/part-00000-da5751e4-04bc-4443-ab0f-cefb35bbe6b1-c000.snappy.parquet","timestamp":1762600703451,"batchId":2}
-{"path":"file:///C:/Users/HS%20Computers/bridge-monitoring-pyspark/silver/bridge_tilt/part-00000-5649e42a-bcbd-4ca6-ba48-81d3af3fb8eb-c000.snappy.parquet","timestamp":1762600713676,"batchId":2}

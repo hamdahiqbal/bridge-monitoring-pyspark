@@ -1,5 +1,0 @@
-v1
-{"path":"file:///C:/Users/HS%20Computers/bridge-monitoring-pyspark/silver/bridge_temperature/part-00000-1b967a21-cb1d-4574-9502-4b46d02d8ee5-c000.snappy.parquet","size":5666,"isDir":false,"modificationTime":1762599567865,"blockReplication":1,"blockSize":33554432,"action":"add"}
-{"path":"file:///C:/Users/HS%20Computers/bridge-monitoring-pyspark/silver/bridge_temperature/part-00001-b8c6fbe0-8e1f-4701-992c-3149a252ad16-c000.snappy.parquet","size":5287,"isDir":false,"modificationTime":1762599567867,"blockReplication":1,"blockSize":33554432,"action":"add"}
-{"path":"file:///C:/Users/HS%20Computers/bridge-monitoring-pyspark/silver/bridge_temperature/part-00002-649f28e2-cf12-462d-a534-2cc80b7e7447-c000.snappy.parquet","size":5149,"isDir":false,"modificationTime":1762599567867,"blockReplication":1,"blockSize":33554432,"action":"add"}
-{"path":"file:///C:/Users/HS%20Computers/bridge-monitoring-pyspark/silver/bridge_temperature/part-00003-88824f90-3fcf-4f87-918b-020b6b6d4881-c000.snappy.parquet","size":4632,"isDir":false,"modificationTime":1762599567867,"blockReplication":1,"blockSize":33554432,"action":"add"}
