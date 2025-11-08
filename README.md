@@ -1,105 +1,78 @@
+
+# Bridge Monitoring — End-to-End Streaming Pipeline in PySpark
+
+This repository implements an end-to-end streaming ETL pipeline for monitoring bridges using simulated IoT sensor data.  
+The pipeline follows the Bronze → Silver → Gold medallion architecture and is built with PySpark Structured Streaming.
+
+It mirrors the Databricks Delta Live Tables bridge-monitoring concept but uses pure PySpark and file-based sources (JSON → Parquet) for full local execution.
+
 ---
 
-# Bridge Monitoring – End-to-End Streaming Pipeline in PySpark
-
-This repository implements an end-to-end **streaming ETL pipeline** for monitoring bridges using simulated IoT sensors.
-The pipeline follows the **Bronze → Silver → Gold medallion architecture** and is built with **PySpark Structured Streaming**.
-
-It closely mirrors the classic Databricks Delta Live Tables bridge-monitoring example, but uses **pure PySpark + file sources** (JSON → Parquet) and can run locally on a laptop.
-
----
-
-## 1. High-level overview
+## 1. Project Overview
 
 Three simulated sensor streams are generated for each bridge:
 
-* **Temperature**
-* **Vibration**
-* **Tilt**
+- Temperature  
+- Vibration  
+- Tilt  
 
 Events flow through the following stages:
 
-1. **Streams (landing zone)** – raw JSON files written continuously by `data_generator.py`.
-2. **Bronze layer** – immutable raw Parquet, minimal validation, plus a **bronze quarantine**.
-3. **Silver layer** – enriched with static **bridge metadata**, with strict data-quality rules and a **silver rejected** sink.
-4. **Gold layer** – windowed, watermarked aggregations joined across all three sensors to produce `gold/bridge_metrics`.
+1. **Streams (Landing Zone)** – Raw JSON files written continuously by `data_generator.py`.
+2. **Bronze Layer** – Immutable Parquet storage with minimal validation and a bronze quarantine zone.
+3. **Silver Layer** – Enriched with static bridge metadata, applying strict data-quality checks. Invalid rows are routed to a silver rejected sink.
+4. **Gold Layer** – Performs 1-minute windowed and watermarked aggregations across all three sensors to produce the final `gold/bridge_metrics` dataset.
 
-The notebook **`notebooks/demo.ipynb`** demonstrates:
-
-* Inspecting Bronze/Silver/Gold tables
-* Data-quality results (rejected rows)
-* Windowed metrics
-* Example analytics (top bridges by vibration)
-* A small watermark experiment
-* The overall DAG (from `notebooks/dag.png`)
+The demonstration notebook (`notebooks/demo.ipynb`) includes:
+- Inspection of Bronze, Silver, and Gold tables  
+- Data-quality metrics and rejected records  
+- Windowed aggregations and watermark behavior  
+- Example analytics (e.g., top bridges by vibration)  
+- Visualization of the complete data flow DAG (`notebooks/dag.png`)
 
 ---
-
-## 2. Repository structure
+````
+## 2. Repository Structure
 
 ```text
 bridge-monitoring-pyspark/
-├─ .venv/                     # local virtual environment (gitignored)
-├─ bronze/                    # bronze Parquet outputs (gitignored)
-│  ├─ bridge_temperature/
-│  ├─ bridge_vibration/
-│  ├─ bridge_tilt/
-│  └─ rejected/              # bronze quarantine
-├─ silver/                    # silver Parquet outputs (gitignored)
-│  ├─ bridge_temperature/
-│  ├─ bridge_vibration/
-│  ├─ bridge_tilt/
-│  └─ rejected/              # silver rejected records
-├─ gold/
-│  └─ bridge_metrics/        # final 1-minute metrics (gitignored)
-├─ streams/                  # landing zone for raw JSON events (gitignored)
-│  ├─ bridge_temperature/
-│  ├─ bridge_vibration/
-│  └─ bridge_tilt/
-├─ checkpoints/              # streaming checkpoints per query (gitignored)
-│  ├─ bronze_temperature/
-│  ├─ bronze_vibration/
-│  ├─ bronze_tilt/
-│  ├─ bronze_rejected/
-│  ├─ silver_temperature/
-│  ├─ silver_vibration/
-│  ├─ silver_tilt/
-│  ├─ silver_rejected/
-│  └─ gold_bridge_metrics/
-├─ data_generator/
-│  └─ data_generator.py      # JSON event generator
-├─ metadata/
-│  └─ bridges.csv            # static bridge metadata
-├─ notebooks/
-│  ├─ demo.ipynb             # validation & analytics notebook
-│  └─ dag.png                # pipeline DAG / architecture diagram
-├─ pipelines/
-│  ├─ bronze_ingest.py       # Streams → Bronze
-│  ├─ silver_enrichment.py   # Bronze → Silver (+ DQ + metadata join)
-│  └─ gold_aggregation.py    # Silver → Gold (window + watermark + joins)
-├─ scripts/
-│  ├─ run_all.sh             # convenience script (bash)
-│  └─ run_all.ps1            # convenience script (PowerShell, Windows)
+├─ data_generator/          # JSON event generator
+│  └─ data_generator.py
+├─ metadata/                # static bridge metadata
+│  └─ bridges.csv
+├─ notebooks/               # validation and demo
+│  ├─ demo.ipynb
+│  └─ dag.png
+├─ pipelines/               # PySpark ETL scripts
+│  ├─ bronze_ingest.py
+│  ├─ silver_enrichment.py
+│  └─ gold_aggregation.py
+├─ scripts/                 # helper scripts
+│  ├─ run_all.ps1
+│  └─ run_all.sh
 ├─ .gitignore
 └─ README.md
-```
+````
+
+The following runtime folders are excluded from version control but are generated automatically during execution:
+
+* `.venv/` — local virtual environment
+* `streams/` — raw JSON landing zone
+* `bronze/` — ingested immutable Parquet files
+* `silver/` — enriched data and rejected records
+* `gold/` — final aggregated outputs
+* `checkpoints/` — Structured Streaming checkpoints
 
 ---
 
-## 3. Environment & dependencies
+## 3. Environment and Dependencies
 
-The project is designed to run on a local machine.
+### Tested Versions
 
-### 3.1. Tested versions
+* Python 3.13.5
+* PySpark 3.x (Structured Streaming)
 
-* **Python**: 3.13.5
-* **PySpark**: 3.x (Structured Streaming)
-
-Any recent 3.x PySpark + matching Spark runtime should work.
-
-### 3.2. Creating the virtual environment
-
-From the project root:
+### Virtual Environment Setup
 
 ```bash
 python -m venv .venv
@@ -113,31 +86,31 @@ source .venv/bin/activate
 pip install pyspark jupyter
 ```
 
-If you are on Windows and Spark requires `winutils.exe`, make sure your Hadoop/Spark environment is configured (e.g. `HADOOP_HOME`, etc.) before starting the pipelines.
+If running on Windows, ensure `HADOOP_HOME` and `winutils.exe` are configured for Spark.
 
 ---
 
-## 4. Data model
+## 4. Data Model
 
-### 4.1. Raw event schema (JSON in `streams/`)
+### Raw Events (in `streams/`)
 
-Each generated event has:
+Each simulated event includes:
 
-* `event_time` – ISO-8601 UTC timestamp (with random 0–60s lag)
-* `bridge_id` – integer bridge identifier
-* `sensor_type` – `"temperature" | "vibration" | "tilt"`
-* `value` – measurement value (float)
-* `ingest_time` – server write time in ISO-8601 UTC
+* `event_time` — UTC timestamp with random lag (0–60 seconds)
+* `bridge_id` — numeric bridge identifier
+* `sensor_type` — one of `"temperature"`, `"vibration"`, or `"tilt"`
+* `value` — sensor reading (float)
+* `ingest_time` — server write timestamp in UTC
 
-Events are written to partitioned directories, e.g.:
+Files are written partitioned by date, for example:
 
-```text
+```
 streams/bridge_temperature/date=YYYY-MM-DD/events_*.json
 ```
 
-### 4.2. Bronze schema (Parquet)
+### Bronze Schema
 
-Bronze tables add parsed and processing columns:
+Bronze tables store:
 
 * `event_time` (string)
 * `bridge_id` (int)
@@ -148,288 +121,203 @@ Bronze tables add parsed and processing columns:
 * `ingest_time_ts` (timestamp)
 * `partition_date` (date)
 
-### 4.3. Silver / Gold
+### Silver and Gold
 
-Silver inherits bronze columns and adds **bridge metadata** (name, location, installation date).
+The Silver layer adds static metadata fields (name, location, installation_date).
+The Gold layer computes 1-minute windowed metrics with a 2-minute watermark:
 
-Gold `bridge_metrics` contains **1-minute windowed** metrics:
-
-* `bridge_id`
-* `window_start`, `window_end`
 * `avg_temperature`
 * `max_vibration`
 * `max_tilt_angle`
-* plus metadata columns for readability
-
-All aggregations use a **2-minute watermark** on `event_time_ts` to handle late data.
 
 ---
 
-## 5. Running the pipeline
+## 5. Running the Pipeline
 
-You can run each component manually or use the helper scripts.
+Each stage runs independently as a Structured Streaming process.
 
-### 5.1. Start the data generator
-
-In **one terminal** (with virtualenv activated):
+### Step 1 – Start the Data Generator
 
 ```powershell
-# Windows / PowerShell
 cd path\to\bridge-monitoring-pyspark
 .\.venv\Scripts\Activate.ps1
-
 python .\data_generator\data_generator.py --duration-seconds 60 --rate 10
 ```
 
 Examples:
 
-* Normal run: `--duration-seconds 60 --rate 10`
-* Deterministic test run: `--duration-seconds 10 --rate 5 --test-seed 42`
+* Regular run: `--duration-seconds 60 --rate 10`
+* Deterministic test mode: `--duration-seconds 10 --rate 5 --test-seed 42`
 
-Generated files appear in `streams/bridge_*`.
-
-### 5.2. Run Bronze ingestion
-
-In **a second terminal**:
+### Step 2 – Bronze Ingestion
 
 ```powershell
-cd path\to\bridge-monitoring-pyspark
-.\.venv\Scripts\Activate.ps1
-
 python .\pipelines\bronze_ingest.py
 ```
 
-This starts three Structured Streaming queries which:
+Reads JSON streams, parses timestamps, writes Parquet to `bronze/`, and invalid records to `bronze/rejected`.
 
-* Read JSON events from `streams/…`
-* Parse timestamps
-* Write Parquet to `bronze/bridge_*`
-* Write malformed records to `bronze/rejected`
-
-Leave this process running while data is generated.
-
-### 5.3. Run Silver enrichment
-
-In **a third terminal**:
+### Step 3 – Silver Enrichment
 
 ```powershell
-cd path\to\bridge-monitoring-pyspark
-.\.venv\Scripts\Activate.ps1
-
 python .\pipelines\silver_enrichment.py
 ```
 
-Silver:
+Reads Bronze data, joins with metadata (`metadata/bridges.csv`), applies data-quality filters, and writes valid and rejected outputs.
 
-* Reads bronze Parquet as streaming source
-* Joins with static `metadata/bridges.csv` on `bridge_id`
-* Applies data-quality rules (see section 6)
-* Writes good rows to `silver/bridge_*`
-* Sends failed rows to `silver/rejected`
-
-### 5.4. Run Gold aggregation
-
-In **a fourth terminal**:
+### Step 4 – Gold Aggregation
 
 ```powershell
-cd path\to\bridge-monitoring-pyspark
-.\.venv\Scripts\Activate.ps1
-
 python .\pipelines\gold_aggregation.py
 ```
 
-Gold:
+Performs:
 
-* Reads three silver streams
-* Applies `withWatermark("event_time_ts", "2 minutes")`
-* Calculates 1-minute tumbling window metrics:
+* Watermarking (`2 minutes`)
+* 1-minute tumbling window aggregation
+* Joins temperature, vibration, and tilt metrics on `(bridge_id, window)`
+* Writes results to `gold/bridge_metrics`
 
-  * avg temperature
-  * max vibration
-  * max tilt angle
-* Joins the three aggregated streams on `(bridge_id, window)`
-* Writes `gold/bridge_metrics` as Parquet
+All jobs use `checkpoints/` for exactly-once and restart-safe semantics.
 
-All streaming jobs use checkpoint directories under `checkpoints/` to provide **exactly-once semantics** and idempotency.
-
-### 5.5. Convenience scripts
+### Step 5 – Helper Scripts
 
 For convenience:
 
-* `scripts/run_all.ps1` – example PowerShell script to start the three pipelines on Windows.
-* `scripts/run_all.sh` – equivalent shell script for bash-style environments.
-
-You can adapt these to your environment (e.g. open new terminals, or run in the background).
+* `scripts/run_all.ps1` – Start all pipelines on Windows
+* `scripts/run_all.sh` – Start all pipelines on Linux/macOS
 
 ---
 
-## 6. Data-quality checks
+## 6. Data Quality Rules
 
-Data-quality is enforced in two stages.
+### Bronze Layer
 
-### 6.1. Bronze (minimal)
+* Validates basic JSON structure
+* Records missing required fields are written to `bronze/rejected`
 
-* Ensures JSON can be parsed into the expected schema.
-* Records that cannot be parsed or are missing required columns are written to **`bronze/rejected`**.
+### Silver Layer
 
-### 6.2. Silver (strict expectations)
+Enforces strict expectations:
 
-For each sensor type, the pipeline applies expectations on the streaming DataFrame:
+* `event_time_ts` is not null
+* `value` is not null
+* Valid range per sensor:
 
-* `event_time_ts` **not null**
-* `value` **not null**
-* Sensor-specific ranges:
+  * Temperature: −40 ≤ value ≤ 80
+  * Vibration: value ≥ 0
+  * Tilt: 0 ≤ value ≤ 90
 
-  * **Temperature**: `-40°C ≤ value ≤ 80°C`
-  * **Vibration**: `value ≥ 0`
-  * **Tilt**: `0° ≤ value ≤ 90°`
+Invalid records are written to `silver/rejected`.
 
-Valid rows are written to `silver/bridge_*`; invalid rows are written to **`silver/rejected`**.
-
-The notebook includes a cell:
+Example:
 
 ```python
 from pyspark.sql.functions import count
-
 rejected_df = spark.read.parquet("../silver/rejected")
 rejected_df.groupBy("sensor_type").agg(count("*").alias("rejected_count")).show()
 ```
 
-to show **rejected rows per sensor**.
-
-### 6.3. Join success rate
-
-Silver also performs a **stream-static join** with `metadata/bridges.csv`.
-The notebook demonstrates how to compute the join success rate, e.g.:
+### Join Success Rate
 
 ```python
 from pyspark.sql.functions import col
-
 silver_temp = spark.read.parquet("../silver/bridge_temperature")
 total = silver_temp.count()
 matched = silver_temp.filter(col("name").isNotNull()).count()
-
-print(f"Join success rate (temperature): {matched / total * 100:.2f}%")
+print(f"Join success rate: {matched / total * 100:.2f}%")
 ```
 
 ---
 
-## 7. Validation & analytics (demo notebook)
+## 7. Validation and Analytics Notebook
 
-Open Jupyter from the project root:
+Launch Jupyter Notebook:
 
 ```bash
 jupyter notebook
 ```
 
-Then open **`notebooks/demo.ipynb`**.
+Open `notebooks/demo.ipynb`, which includes:
 
-The notebook is organised into sections:
+1. Environment verification (`spark.version`)
+2. Bronze inspection and event count per minute
+3. Silver inspection and rejected record counts
+4. Gold inspection (aggregated metrics)
+5. Example analytics: Top bridges by vibration
+6. Watermark comparison experiment
+7. Pipeline DAG visualization (`dag.png`)
 
-1. **Environment check**
+Example query:
 
-   * Creates a SparkSession, prints `spark.version`, and shows paths.
-
-2. **Inspect Bronze layer**
-
-   * Reads Parquet from `../bronze/…`
-   * Shows schemas and example rows.
-   * Counts events per minute using `window("event_time_ts", "1 minute")`.
-
-3. **Inspect Silver layer**
-
-   * Reads silver tables and `silver/rejected`.
-   * Prints schemas and row counts.
-   * Shows rejected rows grouped by `sensor_type`.
-
-4. **Inspect Gold layer**
-
-   * Reads `../gold/bridge_metrics`.
-   * Displays schema and a sample of the resulting metrics.
-
-5. **Example analytics – top bridges by max vibration**
-
-   ```python
-   from pyspark.sql.functions import max as spark_max, col
-
-   top_vibration = (
-       gold_df
-       .groupBy("bridge_id")
-       .agg(spark_max("max_vibration").alias("peak_vibration"))
-       .orderBy(col("peak_vibration").desc())
-   )
-
-   top_vibration.show(10, truncate=False)
-   ```
-
-6. **Watermark behaviour experiment**
-
-   * Compares a large watermark vs a very small watermark to illustrate how late events may be dropped when they fall outside the watermark horizon.
-
-7. **Pipeline DAG / architecture diagram**
-
-   * Displays `dag.png`, a static diagram illustrating the flow:
-     **streams → bronze → silver → gold** with metadata and rejected paths.
-
-This notebook serves as the main **validation and demo artifact** for the assignment.
+```python
+from pyspark.sql.functions import max as spark_max, col
+top_vibration = (
+    gold_df.groupBy("bridge_id")
+    .agg(spark_max("max_vibration").alias("peak_vibration"))
+    .orderBy(col("peak_vibration").desc())
+)
+top_vibration.show(10, truncate=False)
+```
 
 ---
 
-## 8. Testing & reproducibility
+## 8. Reproducibility and Testing
 
-The project includes several features specifically for testing and reproducibility:
+Features that ensure consistent and reliable runs:
 
-* **Deterministic generator**:
-  `data_generator.py` supports `--test-seed` to generate the same sequence of events for repeatable experiments.
-
-* **Idempotent outputs**:
-  All streaming writers use dedicated `checkpointLocation`s under `checkpoints/`.
-  This ensures that if the job is restarted, it resumes from the last committed offsets.
-
-* **Watermark experiments**:
-  The notebook demonstrates how different watermark settings (too small vs sufficiently large) affect late events and aggregated outputs.
+* Deterministic data generation (`--test-seed`)
+* Unique checkpoint locations for each stream (idempotent writes)
+* Configurable watermark window for latency experiments
 
 ---
 
-## 9. Example command summary
-
-For a full local run on Windows / PowerShell:
+## 9. Example End-to-End Run (Windows / PowerShell)
 
 ```powershell
-# 0. From repo root
 cd "C:\path\to\bridge-monitoring-pyspark"
 .\.venv\Scripts\Activate.ps1
 
-# 1. Generate data (60s, ~10 events/sec)
 python .\data_generator\data_generator.py --duration-seconds 60 --rate 10
-
-# 2. In a new terminal – Bronze
 python .\pipelines\bronze_ingest.py
-
-# 3. In another terminal – Silver
 python .\pipelines\silver_enrichment.py
-
-# 4. In another terminal – Gold
 python .\pipelines\gold_aggregation.py
-
-# 5. After some data has been processed, open notebook
 jupyter notebook .\notebooks\demo.ipynb
 ```
 
-On Linux/macOS, the commands are analogous, with `source .venv/bin/activate` instead of the PowerShell activation.
+Equivalent commands for Linux/macOS:
+
+```bash
+source .venv/bin/activate
+```
 
 ---
 
-## 10. Notes for reviewers / instructors
+## 10. Notes for Reviewers and Instructors
 
-* The project deliberately uses **file-based sources** (JSON → Parquet) instead of Kafka to keep the setup lightweight and reproducible on a single machine.
-* All medallion layers are **append-only**, with explicit `checkpointLocation`s for each streaming query.
-* Both **bronze** and **silver** layers include quarantine/rejected sinks to make data-quality behaviour observable.
-* The notebook plus `dag.png` together act as the **documentation of the DAG and execution flow**, as required in the assignment brief.
+* The project uses file-based data sources (JSON → Parquet) for simplicity and full reproducibility.
+* Each layer is append-only and uses independent checkpoint directories for exactly-once semantics.
+* Bronze and Silver layers include rejected sinks for visible data-quality validation.
+* The `demo.ipynb` notebook and `dag.png` diagram together document the complete ETL flow.
 
-If you want to reproduce the exact runs used for screenshots in the report, you can use the deterministic generator command:
+To reproduce the exact results used for screenshots:
 
 ```powershell
 python .\data_generator\data_generator.py --duration-seconds 10 --rate 5 --test-seed 42
 ```
+
+---
+
+## 11. Final Status
+
+All components have been implemented, tested, and validated:
+
+* Data Generator
+* Bronze, Silver, and Gold Streaming Pipelines
+* Data-Quality Validation and Rejected Handling
+* Structured Streaming Checkpointing and Idempotency
+* Jupyter Notebook for Verification and Analytics
+
+This repository represents a complete implementation of the end-to-end PySpark streaming pipeline required for the Bridge Monitoring assignment.
+
 
