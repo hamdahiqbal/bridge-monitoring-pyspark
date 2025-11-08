@@ -1,8 +1,3 @@
-You’re right to double-check 🙂
-That version had some extra `fences around the *whole* thing and one stray`.` – if you paste it like that, GitHub will render the entire README as code.
-
-Here is the **clean, final README.md** – safe to copy-paste **exactly as is** into your file:
-
 ---
 
 # Bridge Monitoring – End-to-End Streaming Pipeline in PySpark
@@ -174,7 +169,7 @@ All aggregations use a **2-minute watermark** on `event_time_ts` to handle late 
 
 You can run each component manually or use the helper scripts.
 
-### 5.1. 1️⃣ Start the data generator
+### 5.1. Start the data generator
 
 In **one terminal** (with virtualenv activated):
 
@@ -193,7 +188,7 @@ Examples:
 
 Generated files appear in `streams/bridge_*`.
 
-### 5.2. 2️⃣ Run Bronze ingestion
+### 5.2. Run Bronze ingestion
 
 In **a second terminal**:
 
@@ -213,7 +208,7 @@ This starts three Structured Streaming queries which:
 
 Leave this process running while data is generated.
 
-### 5.3. 3️⃣ Run Silver enrichment
+### 5.3. Run Silver enrichment
 
 In **a third terminal**:
 
@@ -232,7 +227,7 @@ Silver:
 * Writes good rows to `silver/bridge_*`
 * Sends failed rows to `silver/rejected`
 
-### 5.4. 4️⃣ Run Gold aggregation
+### 5.4. Run Gold aggregation
 
 In **a fourth terminal**:
 
@@ -257,7 +252,7 @@ Gold:
 
 All streaming jobs use checkpoint directories under `checkpoints/` to provide **exactly-once semantics** and idempotency.
 
-### 5.5. 5️⃣ Convenience scripts
+### 5.5. Convenience scripts
 
 For convenience:
 
@@ -438,5 +433,3 @@ If you want to reproduce the exact runs used for screenshots in the report, you 
 python .\data_generator\data_generator.py --duration-seconds 10 --rate 5 --test-seed 42
 ```
 
-
-You can paste this straight into `README.md`, save, then commit & push.
