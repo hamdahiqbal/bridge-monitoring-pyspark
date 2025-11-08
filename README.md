@@ -31,10 +31,9 @@ The demonstration notebook (`notebooks/demo.ipynb`) includes:
 - Visualization of the complete data flow DAG (`notebooks/dag.png`)
 
 ---
-````
-## 2. Repository Structure
 
-```text
+## 2. Repository Structure
+````
 bridge-monitoring-pyspark/
 ├─ data_generator/          # JSON event generator
 │  └─ data_generator.py
